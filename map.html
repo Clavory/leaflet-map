@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+<title>Top Places to Visit</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+</head>
+<style>
+#map {width: 1600px; height: 700px}
+</style>
+<body>
+<div id="map"></div>
+</body>
+<script>
+var map_center = [10.3392, 123.8537];
+var mapOptions = {
+  center: map_center,
+  zoom: 5.5
+}
+var map = L.map('map', mapOptions);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 12,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+// Places
+japan_latlong = [37.4176, 140.4015];
+japan_marker = L.marker(japan_latlong).addTo(map);
+
+hokkaido_latlong = [45.4139, 141.6529];
+hokkaido_marker = L.marker(hokkaido_latlong).addTo(map);
+
+tokyo_latlong = [35.6966, 139.7626];
+tokyo_marker = L.marker(tokyo_latlong).addTo(map);
+
+telabastagan_latlong = [15.12535, 120.60462];
+telabastagan_marker = L.marker(telabastagan_latlong).addTo(map);
+
+southkorea_latlong = [37.6273, 127.3672];
+southkorea_marker = L.marker(southkorea_latlong).addTo(map);
+
+paris_latlong = [48.8573, 2.3573];
+paris_marker = L.marker(paris_latlong).addTo(map);
+48.8573/2.3573
+
+
+37.6273/127.3672
+
+var polyline_latlngs = [
+    [[13.3736, 122.0636],
+     [12.5572, 122.1034],
+     [13.3135, 121.2245],
+     [12.5559, 121.2678]
+    ],
+];
+polyline = L.polyline(polyline_latlngs, {color: 'brown'}).addTo(map);
+
+</script>
+</html>
